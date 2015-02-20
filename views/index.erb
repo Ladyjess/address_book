@@ -1,0 +1,21 @@
+<h1>Address Book</h1>
+
+
+<div class="form-group">
+<form action="/contacts" method="post">
+  <label for="name">Enter your name:</label>
+
+  <input id="name" name="name" type="text" class="form-control">
+
+  <button type="submit" class="btn btn-warning">Add contact</button>
+
+</form>
+</div>
+
+<ul>
+<% @contacts.each do |contact| %>
+
+  <li class="contact"><a href="/contact/<%= contact.id %>"><%= contact.name %></a></li>
+
+<% end %>
+</ul>

@@ -1,0 +1,31 @@
+<h1>Address Book for <%= @contact.name %></h1>
+
+<form action="/contact" method="post">
+  <input id="contact_id" name="contact_id" value="<%= @contact.id %>" type="hidden">
+
+  <label for="phone_number">Enter number:</label>
+  <input id="phone_number" name="phone_number" type="text">
+
+  <label for="email_address">Enter Email:</label>
+  <input id="email_address" name="email_address" type="text">
+
+  <label for="mail_address">Enter address:</label>
+  <input id="mail_address" name="mail_address" type="text">
+
+  <button type="submit">Add it!</button>
+
+</form>
+
+<ul>
+  <% @contact.phones.each do |phone| %>
+    <li class="phone_number"><%= phone.phone_number %> </li>
+  <% end %>
+
+  <% @contact.addresses.each do |new_address| %>
+  <li><%= new_address.mail_address %></li>
+  <% end %>
+
+  <% @contact.emails.each do |new_email| %>
+  <li><%= new_email.email_address %></li>
+  <% end %>
+</ul>
